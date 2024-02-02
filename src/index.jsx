@@ -8,6 +8,12 @@ import ServiceTickets from "./components/tickets/ServiceTickets";
 import TicketsList from "./components/tickets/TicketsList";
 import TicketDetails from "./components/tickets/TicketDetails";
 import CreateTicket from "./components/tickets/CreateTicket";
+import Employees from "./components/employees/Employees";
+import EmployeeList from "./components/employees/EmployeesList";
+import EmployeeDetails from "./components/employees/EmployeeDetails";
+import CustomerList from "./components/customers/CustomersList";
+import Customers from "./components/customers/Customers";
+import CustomerDetails from "./components/customers/CustomerDetails";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -20,11 +26,22 @@ root.render(
           <Route path="create" element={<CreateTicket />} />
         </Route>
       </Route>
+      <Route path="/" element={<App />}>
+        <Route path="employees" element={<Employees />}>
+          <Route index element={<EmployeeList />} />
+          <Route path=":id" element={<EmployeeDetails />} />
+          {/* <Route path="create" element={<CreateEmployee />} />  */}
+        </Route>
+      </Route>
+      <Route path="/" element={<App />}>
+        <Route path="customers" element={<Customers />}>
+          <Route index element={<CustomerList />} />
+          <Route path=":id" element={<CustomerDetails />} />
+          {/* <Route path="create" element={<CreateEmployee />} />  */}
+        </Route>
+      </Route>
     </Routes>
   </BrowserRouter>,
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
