@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Table } from "reactstrap";
 import { getEmployee } from "../../data/employeeData";
@@ -27,7 +27,7 @@ export default function EmployeeDetails() {
           <td>{employee.name}</td>
         </tr>
         <tr>
-          <th scope="row">Employee</th>
+          <th scope="row">Specialty</th>
           <td>{employee.specialty}</td>
         </tr>
       </tbody>

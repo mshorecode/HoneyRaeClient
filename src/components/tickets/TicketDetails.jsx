@@ -5,10 +5,8 @@ import { getServiceTicket } from "../../data/serviceTicketsData";
 
 export default function TicketDetails() {
   const { id } = useParams();
-
   const [ticket, setTicket] = useState(null);
 
-  //add useEffect here to get the ticket details from the API
   useEffect(() => {
     getServiceTicket(id).then(setTicket);
   }, []);
