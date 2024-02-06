@@ -58,3 +58,16 @@ export const deleteServiceTicket = async (id) => {
     throw new Error("Failed to Delete");
   }
 };
+
+export const completeServiceTicket = async (id) => {
+  const response = await fetch(`${_apiUrl}/${id}/complete`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to Complete Service Ticket");
+  }
+};

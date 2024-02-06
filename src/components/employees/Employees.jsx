@@ -5,7 +5,6 @@ export default function Employees() {
   return (
     <>
       <h2>Employees</h2>
-      <Link to="/employees/create">Add</Link>
       <Outlet />
     </>
   );
